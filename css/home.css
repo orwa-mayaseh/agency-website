@@ -1,0 +1,203 @@
+/*
+================================
+======= Table of Content =======
+================================
+    0. Main Styles
+      0.0. section1: Home Styles 
+      0.1. section2: Activities Styles
+      0.2. sectio3: Courses Styles
+    1. Responsive Design 
+      1.0. Tablet Styles (min-width: 768px)
+      1.1. Desktop Styles (min-width: 1024px)
+================================
+*/
+
+/* ========== 0. Main Sections ========== */
+/* ======== 0.0. section1: Home Styles ========= */
+main .container section:first-of-type {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--spacing-sm);
+  padding-top: 0;
+}
+
+main .container section:first-of-type img {
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-md);
+  flex: 1 1 auto;
+}
+
+main .container section:first-of-type p {
+  flex: 1 1 auto;
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  align-self: center;
+}
+
+
+/* ========== 0.1. section2: Activities Styles ========== */
+main .container section:nth-child(3) ul {
+  counter-reset: my-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main .container section:nth-child(3) ul li {
+  counter-increment: my-counter;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--spacing-md);
+  position: relative;
+  padding-right: 5rem;
+  height: auto;
+  transition: 0.3s;
+}
+
+main .container section:nth-child(3) ul li:hover {
+  transform: translateY(-20px);
+}
+main .container section:nth-child(3) ul li:last-of-type {
+  margin-right: 2rem;
+}
+
+main .container section:nth-child(3) ul li::before {
+  content: counter(my-counter, decimal);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 4rem;
+  height: 4rem;
+  color: var(--color-text-secondary);
+  background-color: var(--color-theme);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-extraBbold);
+}
+
+main .container section:nth-child(3) ul li:last-of-type:before {
+  background-color: var(--color-bg-tertiary);
+}
+
+main .container section:nth-child(3) ul li h3 {
+  color: var(--color-theme);
+}
+
+
+/* ========== 0.2. section3: Courses Styles ========== */
+main .container section:nth-child(4) ul {
+  display: flex;
+  gap: var(--spacing-lg);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; 
+}
+
+main .container section:nth-child(4) ul li {
+  flex: 1 0 17.4rem;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+main .container section:nth-child(4) ul li:hover img {
+  transform: scale(1.1);
+}
+
+main .container section:nth-child(4) ul li img {
+  height: 65%;
+  object-fit: cover;
+  object-position: center;
+  border-top-left-radius: var(--border-radius-lg);
+  border-top-right-radius: var(--border-radius-lg);
+  order: -1;
+}
+
+main .container section:nth-child(4) ul li h3 {
+  margin: var(--spacing-md) 0;
+  text-transform: capitalize;
+  font-weight: var(--font-weight-extraBbold);
+  font-size: var(--font-size-xl);
+}
+
+main .container section:nth-child(4) ul li p {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-lg);
+}
+
+
+/* ========== 1. Responsive Design ========== */
+/* -- 1.0. Tablets Styles (min-width: 768px) and (max-width:1023px) */
+@media screen and (min-width: 768px) and (max-width:1023px) {
+
+  /* ---- Home Section ---- */
+  main .container section:first-of-type {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+
+  main .container section:first-of-type * {
+    width: 50%;
+  }
+
+  /* ---- Activities Section ---- */
+  main .container section:nth-child(3) ul {
+    width: 24rem;
+    margin: 0 auto;
+  }
+
+  main .container section:nth-child(3) ul li:last-of-type {
+    margin-right: 0;
+  }
+}
+
+
+/* -- 1.1. Desktop Styles (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+
+  /* ---- Home Section ---- */
+  main .container section:first-of-type {
+    gap: var(--spacing-xl);
+  }
+
+  main .container section:first-of-type p {
+    font-size: var(--font-size-xl);
+  }
+
+  /* ---- Activities Section ---- */
+  main .container section:nth-child(3) ul {
+    flex-direction: row;
+    gap: var(--spacing-md);
+  }
+
+  main .container section:nth-child(3) ul li {
+    width: 50%;
+  }
+
+  main .container section:nth-child(3) ul li:last-of-type {
+    margin-right: 0;
+  }
+
+  main .container section:nth-child(3) ul li h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-extraBbold);
+  }
+
+  main .container section:nth-child(3) ul li p {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-extraBbold);
+    line-height: var(--line-height-lg);
+  }
+}

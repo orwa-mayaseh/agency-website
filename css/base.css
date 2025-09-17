@@ -1,0 +1,233 @@
+/*
+================================
+======= Table of Content =======
+================================
+    0. Reset Styles
+    1. Root Variables
+    2. Fonts
+    3. Global Styles
+    4. Utility Classes
+    5. to-top style
+    6. container style
+    7. Responsive Styles
+================================
+*/
+/* ========== 0. Reset Styles ========== */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ========== 1. Root Variables ========== */
+:root {
+  /*Theme Color*/
+  --color-theme: #00A51E;
+
+  /* Background Color*/
+  --color-bg-primary: #E1E1E1;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #CE0101;
+
+  /* Text Color*/
+  --color-text-primary: #000000;
+  --color-text-secondary: #ffffff;
+  --color-text-tertiary: #D65C5C;
+
+  /* Font Sizes*/
+  --font-size-sm: 0.875em;
+  --font-size-md: 1em;
+  --font-size-lg: 1.125em;
+  --font-size-xl: 1.5em;
+  --font-size-xxl: 2em;
+
+  /*Font Family*/
+  --font-family: "Almarai", "sans-serif";
+
+  /* Font Weight*/
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-extraBbold: 800;
+
+  /*Line Space*/
+  --line-height-sm: 1.2;
+  --line-height-md: 1.5;
+  --line-height-lg: 1.8;
+
+  /*Padding && Margin*/
+  --spacing-sm: 0.5em;
+  --spacing-md: 1em;
+  --spacing-lg: 1.5em;
+  --spacing-xl: 2em;
+  --spacing-xxl: 3.5em;
+
+  /*Border Radius*/
+  --border-radius-md: 0.5em;
+  --border-radius-lg: 0.75em;
+  --border-radius-full: 50%;
+
+  /*Shadows*/
+  --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+  /*Dark mode*/
+  --bg-dark: #666;
+  --text-color-dark: #fff;
+}
+
+/* ========== 2. Fonts ========== */
+@font-face {
+  font-family: "Almarai";
+  src: url(../fonts/Almarai-Light.woff2),
+    url(../fonts/Almarai-Light.woff);
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Almarai";
+  src: url(../fonts/Almarai-Regular.woff2),
+    url(../fonts/Almarai-Regular.woff);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Almarai";
+  src: url(../fonts/Almarai-Bold.woff2),
+    url(../fonts/Almarai-Bold.woff);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Almarai";
+  src: url(../fonts/Almarai-ExtraBold.woff2),
+    url(../fonts/Almarai-ExtraBold.woff);
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* ========== 3. Global Styles ========== */
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  background-color: var(--color-bg-primary);
+  line-height: var(--line-height-md);
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-color-dark);
+}
+
+h1 {
+  font-size: var(--font-size-lg);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  margin: var(--spacing-sm) 0;
+}
+
+h1 span {
+  color: var(--color-text-tertiary);
+}
+
+h2 {
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-md);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========== 4. Utility Classes ========== */
+.pd-y {
+  padding: var(--spacing-xl) 0;
+}
+
+/* ========== 5. to-top style ========== */
+#to-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  background-color: var(--color-bg-secondary);
+  padding: 0.5rem;
+  border-radius: var(--border-radius-full);
+  z-index: 55;
+  transition: 0.3s;
+}
+#to-top:hover {
+  transform: scale(1.2);
+}
+/* ========== 6. container style ========== */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ========== 7. Responsive Styles ========== */
+/* heading styles on large screens */
+@media (min-width: 768px){
+  h1 {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-extraBbold);
+  }
+  h2 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-extraBbold);
+    margin-bottom: var(--spacing-lg);
+  }
+
+}
+/* container width on various screen sizes */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* medium devices */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* large devices */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* extra large devices */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* extra extra large devices */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}

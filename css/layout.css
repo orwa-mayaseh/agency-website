@@ -1,0 +1,214 @@
+/*
+================================
+======== Table of Content ======
+================================
+    0. Header layout and styling
+      0.0. Boreder Hover
+    1. Footer layout and styling
+    2. Responsive Design 
+      2.0. Desktop Styles (min-width: 1024px)
+================================
+*/
+
+/* ========== 0. Header layout and styling ========== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999999;
+  background-color: var(--color-theme);
+  width: 100%;
+  padding: var(--spacing-md) 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .container>button {
+  background-color: transparent;
+  border: none;
+  width: 2rem;
+  cursor: pointer;
+}
+
+header .container nav {
+  background-color: var(--color-theme);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: transform 0.5s;
+}
+
+header .container nav.navIsOpen {
+  transform: translateX(0%);
+}
+
+header .container nav>button {
+  border: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--color-theme);
+}
+
+header .container nav ul {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+header .container nav ul>li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+header .container nav ul>li a {
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  display: block;
+  width: 10rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* =========== 0.1. Border Hover =========== */
+header .container nav ul li::after,
+header .container nav ul li::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* for display pointer */
+  border-style: solid;
+  border-color: var(--color-bg-secondary);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+header .container nav ul li::after {
+  border-width: 2px 0;
+  transform: scale3d(0, 1, 1);
+  width: 100%;
+  height: 90%;
+  transition-delay: 0.2s;
+}
+
+header .container nav ul li::before {
+  border-width: 0 2px;
+  transform: scale3d(1, 0, 1);
+  height: 100%;
+  width: 99%;
+}
+
+header .container nav ul li:hover::after,
+header .container nav ul li:hover::before {
+  transform: scale3d(1, 1, 1);
+}
+
+/* ========== 1. Footer layout and styling ========== */
+footer {
+  background-image: linear-gradient(#e1e1e1 0% 45%, #00a51e 45% 100%);
+}
+
+footer .container {
+  min-height: 18em;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+footer .container div {
+  width: 7em;
+}
+
+footer .container div>img {
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+}
+
+footer .container div>img:hover {
+  transform: scale(1.05);
+}
+
+footer ul {
+  margin: var(--spacing-sm);
+  display: flex;
+  width: 12em;
+  justify-content: space-evenly;
+  gap: var(--spacing-md);
+}
+
+footer ul li {
+  background-color: var(--color-bg-tertiary);
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+footer ul li:hover {
+  transform: translateY(-0.2em);
+}
+
+footer ul li a {
+  cursor: pointer;
+  display: block;
+  padding: 0.5rem;
+}
+
+footer p {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  word-spacing: 0.2em;
+}
+
+/* ========== 2. Responsive Design ========== */
+/* -- 2.1. Desktop Styles (min-width: 1024px) */
+@media screen and (min-width: 992px) {
+
+  header .container>button:first-of-type,
+  header .container nav>button {
+    display: none;
+  }
+
+  header .container>button:last-of-type {
+    order: 1;
+  }
+
+  header .container nav {
+    background-color: transparent;
+    position: static;
+    transform: translateX(0);
+    width: 100%;
+    height: 100%;
+    ;
+  }
+
+  header .container nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 0;
+  }
+}

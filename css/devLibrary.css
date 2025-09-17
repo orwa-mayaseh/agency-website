@@ -1,0 +1,127 @@
+main {
+    direction: ltr;
+}
+
+.books-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.books-list li {
+    padding: var(--spacing-lg);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.books-list li:hover {
+    transform: translateY(-1rem);
+    box-shadow: var(--box-shadow);
+}
+
+.books-list li::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.4rem;
+    height: 0;
+    background-color: var(--color-theme);
+    transition: 0.3s;
+}
+
+.books-list li:hover::before {
+    height: 100%;
+}
+
+li .book-img {
+    width: 35%;
+}
+
+li .book-img img {
+    object-fit: fill;
+    border-radius: var(--border-radius-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.books-list li:hover img {
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow);
+}
+
+li .book-info {
+    padding: 0 var(--spacing-md);
+}
+
+li .book-info h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-md);
+    color: var(--color-theme);
+}
+
+li .book-info P {
+    margin-bottom: var(--spacing-sm);
+}
+
+li .book-info a {
+    text-decoration: underline;
+    text-transform: capitalize;
+    color: var(--color-text-tertiary);
+}
+
+
+@media (min-width: 768px) {
+    .books-list {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+
+    .books-list li {
+        flex-direction: row;
+        gap: var(--spacing-md);
+        position: relative;
+    }
+
+
+    li .book-info P {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    li .book-info a {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .books-list {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    .books-list li {
+        align-items: flex-start;
+    }
+
+    li .book-info h3 {
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-bold);
+    }
+
+    li .book-info P {
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-bold);
+    }
+
+    li .book-info a {
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-lg);
+    }
+}
