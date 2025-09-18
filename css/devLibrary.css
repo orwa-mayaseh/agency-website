@@ -14,7 +14,7 @@ main {
     border-radius: var(--border-radius-md);
     overflow: hidden;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     gap: var(--spacing-sm);
     position: relative;
@@ -22,7 +22,7 @@ main {
 }
 
 .books-list li:hover {
-    transform: translateY(-1rem);
+    transform: translateY(-0.8rem);
     box-shadow: var(--box-shadow);
 }
 
@@ -75,6 +75,9 @@ li .book-info a {
     text-decoration: underline;
     text-transform: capitalize;
     color: var(--color-text-tertiary);
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
 }
 
 
@@ -84,20 +87,12 @@ li .book-info a {
     }
 
     .books-list li {
-        flex-direction: row;
         gap: var(--spacing-md);
-        position: relative;
     }
 
 
     li .book-info P {
         margin-bottom: var(--spacing-lg);
-    }
-
-    li .book-info a {
-        position: absolute;
-        bottom: 10px;
-        right: 15px;
     }
 }
 

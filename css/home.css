@@ -54,7 +54,7 @@ main .container section:nth-child(3) ul li {
 }
 
 main .container section:nth-child(3) ul li:hover {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
 }
 main .container section:nth-child(3) ul li:last-of-type {
   margin-right: 2rem;

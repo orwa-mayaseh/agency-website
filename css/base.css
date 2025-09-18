@@ -122,7 +122,7 @@ body {
 
 body.dark-mode {
   background-color: var(--bg-dark);
-  color: var(--text-color-dark);
+  color: var(--color-text-primary);
 }
 
 h1 {
@@ -130,7 +130,7 @@ h1 {
   font-family: var(--font-family);
   font-weight: var(--font-weight-bold);
   text-align: center;
-  margin: var(--spacing-sm) 0;
+  margin: var(--spacing-md) 0;
 }
 
 h1 span {
@@ -173,9 +173,11 @@ a {
   z-index: 55;
   transition: 0.3s;
 }
+
 #to-top:hover {
   transform: scale(1.2);
 }
+
 /* ========== 6. container style ========== */
 .container {
   width: 100%;
@@ -185,11 +187,12 @@ a {
 
 /* ========== 7. Responsive Styles ========== */
 /* heading styles on large screens */
-@media (min-width: 768px){
+@media (min-width: 768px) {
   h1 {
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-extraBbold);
   }
+
   h2 {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-extraBbold);
@@ -197,6 +200,7 @@ a {
   }
 
 }
+
 /* container width on various screen sizes */
 @media (min-width: 576px) {
   .container {

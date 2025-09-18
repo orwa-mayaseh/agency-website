@@ -124,18 +124,23 @@ header .container nav ul li:hover::before {
 
 /* ========== 1. Footer layout and styling ========== */
 footer {
-  background-image: linear-gradient(#e1e1e1 0% 45%, #00a51e 45% 100%);
+  background-color: var(--color-theme);
+  margin-top: 7rem;
+  width: 100%;
 }
 
 footer .container {
-  min-height: 18em;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  height: 10rem;
+  position: relative;
 }
 
 footer .container div {
   width: 7em;
+  position: absolute;
+  top: -30%;
 }
 
 footer .container div>img {
