@@ -1,5 +1,6 @@
 main {
     direction: ltr;
+    min-height: 40vh;
 }
 
 .books-list {
